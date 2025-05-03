@@ -77,7 +77,42 @@ Create **.prettierrc**:
 ```
 <br>
 
-### ✅ 4. Setup Husky + Lint-Staged (! make sure you are in a git repo and .git file exists.)
+### ✅ 4.1 Setup Husky + Lint-Staged (!IN CASE your repo is monorepo.)
+MEANING: **.git** file is outside your folder where **node_modules** and **package.json** file exists.
+Now,go to **base folder**
+_Folder structure looks like:_
+```
+├── .git
+├── frontend/
+│   ├── ...
+│   ├── node_modules/
+│   ├── package.json
+│   ├── package-lock.json
+│   └── ...
+└── backend/
+```
+
+> npm init -y
+> npm install -D husky lint-staged
+> npx husky init
+
+In **package.json**:
+```
+"scripts": {
+  "prepare": "husky install"
+},
+"lint-staged": {
+  "*.{js,ts,tsx}": "eslint --fix"
+}
+```
+
+Create following files in **.husky** folder with the codde:
+**fileName**: pre-commit    |   **Code**: npx lint-staged
+**fileName**: commit-msg    |   **Code**: npx commitlint --edit \$1
+**fileName**: pre-push      |   **Code**: npm run test && npm run lint
+<br>
+
+### ✅ 4.2 Setup Husky + Lint-Staged (! make sure you are in a git repo and .git file exists.)
 > npx husky-init && npm install
 > npm install -D lint-staged
 
