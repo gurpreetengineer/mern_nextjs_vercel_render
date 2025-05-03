@@ -254,7 +254,7 @@ Update **package.json**:
 ## ✅ Final Folder Structure (Suggested)
 
 ```
-astroquest/
+your_repo_name/
 ├── public/
 ├── .github/
 │   └── workflows/
