@@ -25,19 +25,39 @@
 <br>
 
 ### ✅ 2. Install Tailwind CSS with CSS Variables Support
+> npm install tailwindcss @tailwindcss/postcss postcss
+
+Please follow ** [OFFICIAL DOCS NEXTJS](https://tailwindcss.com/docs/installation/framework-guides/nextjs)
+
+Make sure to add the following code in **postcss.config.mjs**:
+```
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+    autoprefixer: {},
+  },
+};
+export default config;
+```
+
 Open **tailwind.config.ts** and Add CSS variables for theming:
 ```
-theme: {
-  extend: {
-    colors: {
-      brand: {
-        DEFAULT: 'hsl(var(--color-brand) / <alpha-value>)',
-        dark: 'hsl(var(--color-brand-dark) / <alpha-value>)',
-        light: 'hsl(var(--color-brand-light) / <alpha-value>)',
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          DEFAULT: 'hsl(var(--color-brand) / <alpha-value>)',
+          dark: 'hsl(var(--color-brand-dark) / <alpha-value>)',
+          light: 'hsl(var(--color-brand-light) / <alpha-value>)',
+        },
       },
     },
-  },
-},
+  },  
+  plugins: [],
+}
 ```
 
 In **globals.css**, set:
