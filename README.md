@@ -79,7 +79,9 @@ Create **.prettierrc**:
 
 ### ✅ 4.1 Setup Husky + Lint-Staged (!IN CASE your repo is monorepo.)
 MEANING: **.git** file is outside your folder where **node_modules** and **package.json** file exists.
-Now,go to **base folder**
+
+Now, go to **base folder**
+
 _Folder structure looks like:_
 ```
 ├── .git
