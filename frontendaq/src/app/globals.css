@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-brand: 220 90% 56%;
+  --color-brand-dark: 220 90% 40%;
+  --color-brand-light: 220 90% 70%;
 }
 
 @theme inline {
